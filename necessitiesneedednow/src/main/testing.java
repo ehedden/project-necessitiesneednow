@@ -19,8 +19,14 @@ public class testing {
             nameOfItem = input.nextLine();
             if (nameOfItem.equals("done")) {counter--;}
             else {
-            System.out.println("Please input the amount of that item you want in digits please.");
-            quantityOfItem = input.nextLine();
+                System.out.println("Please input the amount of that item you want in digits.");
+                while(!input.hasNextInt()) {
+                    input.next();
+                    input.nextLine();
+                    System.out.println("Please enter the amount you want in digits.");
+                }
+                quantityOfItem = input.next();
+                input.nextLine();
                 currentShoppingCart.put(nameOfItem, quantityOfItem);
             }
         }
